@@ -43,6 +43,7 @@ class SignUp extends Component {
 
     this.setState({ [name]: value });
   };
+
   render() {
     const { displayName, email, password, confirmPassword } = this.state;
     return (
@@ -55,7 +56,7 @@ class SignUp extends Component {
             name="displayName"
             value={displayName}
             onChange={this.handleChange}
-            label="Display Name"
+            label="Username"
             required
           />
           <FormInput
