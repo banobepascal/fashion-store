@@ -15,6 +15,7 @@ class SignUp extends Component {
 
   handleSubmit = async event => {
     event.preventDefault();
+
     const { displayName, email, password, confirmPassword } = this.state;
 
     if (password !== confirmPassword) {
@@ -23,7 +24,10 @@ class SignUp extends Component {
     }
 
     try {
-      const { user } = auth.createUserWithEmailAndPassword(email, password);
+      const { user } = await auth.createUserWithEmailAndPassword(
+        email,
+        password
+      );
 
       await createUserProfileDocument(user, { displayName });
 
@@ -33,8 +37,8 @@ class SignUp extends Component {
         password: "",
         confirmPassword: ""
       });
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.error(error);
     }
   };
 
@@ -48,7 +52,7 @@ class SignUp extends Component {
     const { displayName, email, password, confirmPassword } = this.state;
     return (
       <div className="sign-up">
-        <h2 className="title">I do not have an account</h2>
+        <h2 className="title">I do not have a account</h2>
         <span>Sign up with your email and password</span>
         <form className="sign-up-form" onSubmit={this.handleSubmit}>
           <FormInput
@@ -56,7 +60,7 @@ class SignUp extends Component {
             name="displayName"
             value={displayName}
             onChange={this.handleChange}
-            label="Username"
+            label="Display Name"
             required
           />
           <FormInput
