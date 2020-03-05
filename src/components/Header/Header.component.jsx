@@ -8,11 +8,11 @@ import { ReactComponent as Logo } from "../../assets/crown.svg";
 const Header = ({ currentUser }) => {
   return (
     <div className="header">
-      <Link className="logo-container" to="/">
+      <div className="logo-container">
         <Link to="/">
           <Logo className="logo" />
         </Link>
-      </Link>
+      </div>
       <div className="options">
         <Link className="option" to="/shop">
           SHOP
