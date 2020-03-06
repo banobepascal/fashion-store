@@ -15,10 +15,12 @@ class App extends Component {
   unsubscribeFromAuth = () => null;
 
   componentDidMount() {
-    const {setCurrentUser} = this.props;
+    const { setCurrentUser } = this.props;
+
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
+
         userRef.onSnapshot(snapShot => {
           setCurrentUser({
             id: snapShot.id,
@@ -27,11 +29,11 @@ class App extends Component {
         });
       }
 
-      setCurrentUser({ userAuth });
+      setCurrentUser(userAuth);
     });
   }
 
-  UNSAFE_componentWillMount() {
+  componentWillMount() {
     this.unsubscribeFromAuth();
   }
 
