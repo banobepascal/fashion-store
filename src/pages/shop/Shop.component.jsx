@@ -23,17 +23,24 @@ class ShopPage extends Component {
   componentDidMount() {
     const { updateCollections } = this.props;
     const collectionRef = firestore.collection("collections");
-    collectionRef.onSnapshot(async snapshot => {
-      const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
-      updateCollections(collectionsMap);
-      this.setState({ loading: false });
-    });
+
+    fetch(
+      "https://firestore.googleapis.com/v1/projects/fashion-store-db/databases/(default)/documents/collections"
+    )
+      .then(res => res.json())
+      .then(collections => console.log(collections));
+
+    // collectionRef.get().then(snapshot => {
+    //   const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
+    //   updateCollections(collectionsMap);
+    //   this.setState({ loading: false });
+    // });
   }
   render() {
     const { match } = this.props;
     const { loading } = this.state;
     return (
-      <div className='shop-page'>
+      <div className="shop-page">
         <Route
           exact
           path={`${match.path}`}
