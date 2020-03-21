@@ -3,13 +3,14 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
-import "./App.css";
-
 import Homepage from "./pages/homepage/Homepage.component";
 import Header from "./components/Header/Header.component";
 import ShopPage from "./pages/shop/Shop.component";
 import SignInAndSignUp from "./pages/Sign-in-and-Sign-up/Sign-in-and-Sign-up.component";
 import CheckOutPage from "./pages/checkout/checkout.component";
+
+import { GlobalStyles } from "./global.styles";
+
 import {
   auth,
   createUserProfileDocument,
@@ -51,6 +52,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <GlobalStyles />
         <Header />
         <Switch>
           <Route exact path="/" component={Homepage} />

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const CheckoutPageContainer = styled.div`
   width: 55%;
@@ -12,6 +12,10 @@ export const CheckoutPageContainer = styled.div`
     margin-left: auto;
     margin-top: 50px;
   }
+
+  @media screen and (max-width: 800px) {
+    width: 90%;
+  }
 `;
 
 export const CheckoutHeaderContainer = styled.div`
@@ -20,6 +24,10 @@ export const CheckoutHeaderContainer = styled.div`
   padding: 10px 0;
   justify-content: space-between;
   border-bottom: 1px solid darkgrey;
+
+  @media screen and (max-width: 400px) {
+    font-size: 14px;
+  }
 `;
 
 export const HeaderBlockContainer = styled.div`
@@ -28,6 +36,14 @@ export const HeaderBlockContainer = styled.div`
 
   &:last-child {
     width: 8%;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 21%;
+
+    &:last-child {
+      width: 12%;
+    }
   }
 `;
 

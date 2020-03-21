@@ -20,7 +20,7 @@ export const selectCollectionForPreview = createSelector(
 
 export const selectIsCollectionFetching = createSelector(
   [selectShop],
-  shop => shop.fetching
+  shop => shop.isFetching
 );
 
 export const selectIsCollectionsLoaded = createSelector(

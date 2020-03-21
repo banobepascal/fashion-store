@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import CustomButton from '../Custom-Button/Custom-Button.component';
+import CustomButton from "../Custom-Button/Custom-Button.component";
 
 export const CollectionItemContainer = styled.div`
   width: 22vw;
@@ -19,6 +19,19 @@ export const CollectionItemContainer = styled.div`
       display: flex;
     }
   }
+
+  @media screen and (max-width: 800px) {
+    width: 40vw;
+
+    &:hover {
+      .image {
+        opacity: unset;
+      }
+      button {
+        opacity: unset;
+      }
+    }
+  }
 `;
 
 export const AddButton = styled(CustomButton)`
@@ -28,6 +41,13 @@ export const AddButton = styled(CustomButton)`
   top: 255px;
   display: none;
   outline: none;
+
+  @media screen and (max-width: 800px) {
+    display: block;
+    min-width: unset;
+    opacity: 0.9;
+    padding: 0 10px;
+  }
 `;
 
 export const BackgroundImage = styled.div`
@@ -45,6 +65,10 @@ export const CollectionFooterContainer = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 18px;
+
+  @media screen and (max-width: 400px) {
+    font-size: 14px;
+  }
 `;
 
 export const NameContainer = styled.span`
