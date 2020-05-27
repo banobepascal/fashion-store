@@ -40,7 +40,7 @@ npm start
 |  `/signin`  |  `signin`  |
 |  `/shop`  |  `shop`  |
 |  `/shop/hats`  |  `hats`  |
-|  `/shop/jackets`  |  `jackets  |
+|  `/shop/jackets`  |  `jackets`  |
 |  `/shop/sneakers`  |  `sneakers`  |
 |  `/shop/womens`  |  `womens`  |
 |  `/shop/mens`  |  `mens`  |
