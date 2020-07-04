@@ -25,7 +25,10 @@ npm start
 ```
 ## Features
 * Users can create their own user account.
+* Users can create an account using google.
+* Users can create an account using github
 * Users can sign in.
+* Users can sign in with Google or Github.
 * Users can view clothing categories.
 * Users can view all clothing and pieces.
 * Users can add specific item to cart.
